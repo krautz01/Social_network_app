@@ -1,16 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import './Header';
+import './Technologies';
 
 function App() {
   return (
-    <div className="App">
-      <ul>
-        <li>css</li>
-        <li>html</li>
-        <li>js</li>
-        <li>react</li>
-      </ul>
-    </div>
+  <div>
+    <Header/>
+    <Technologies/>
+  </div>
   );
 }
 
