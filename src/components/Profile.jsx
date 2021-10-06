@@ -1,8 +1,10 @@
+import './Profile.css';
+
 const Profile = () => {
     return (
         <div className = 'content'>
             <div>
-                <img src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCZlf5lc5tX-0gY-y94pGS0mQdL-D0lCH2OQ&usqp=CAU'/>
+                <img src = 'https://cdn.pixabay.com/photo/2021/08/22/15/48/nature-6565499_960_720.jpg'/>
             </div>
             <div>
                 ava + description
