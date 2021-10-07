@@ -1,4 +1,6 @@
 .content {
-  grid-area: c;
+  /*grid-area: c;*/
   background-color: rgb(9, 117, 18);
+  padding-left: 10px;
+  max-width: 495px;
 }

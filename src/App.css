@@ -39,14 +39,18 @@
 
 .app-wrapper {
   margin: 0 auto;
+}
+
+.app-content {
+  max-width: 850px;
+  margin: 0 auto;
   display: grid;
-  width: 1500px;
-
   grid-template-areas:
-  "h h"
   "n c";
-
-  grid-template-rows: 60px 1fr;
-  grid-template-columns: 2fr 10fr;
+  /*
   grid-gap: 20px;
+
+  grid-template-rows: 60px 2fr;
+  grid-template-columns: 2fr 3fr;
+  */
 }
