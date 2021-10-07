@@ -1,9 +1,6 @@
 .header {
-    margin: 0 auto;
     background-color: rgb(6, 5, 51);
-    width: 852px;
-    height: 317px;
-    margin-bottom: 5px;
+    grid-area: h;
 }
 
 .header img  {

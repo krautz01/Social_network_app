@@ -1,9 +1,6 @@
 .nav {
   background-color: rgb(7, 5, 117);
-  float: left;
-  display: block;
-  width: 345px;
-  height: 100vh;
+  grid-area: n;
 }
 
 .item {
