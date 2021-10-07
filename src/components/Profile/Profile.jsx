@@ -5,7 +5,7 @@ const Profile = () => {
     return (
         <div className = {s.content}>
             <div>
-                <img src = 'https://cdn.pixabay.com/photo/2021/08/22/15/48/nature-6565499_960_720.jpg'/>
+                <img src = 'https://s1.1zoom.ru/big3/825/Canada_Lake_Mountains_502039.jpg' width = '1200px' />
             </div>
             <div>
                 ava + description
