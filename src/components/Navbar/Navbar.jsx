@@ -8,13 +8,13 @@ const Navbar = () => {
           <a>Profile</a>
         </div>
         <div className = {'${s.item} ${s.active'}>
-          <a>Massages</a>
+          <a href = "/profile">Massages</a>
         </div>
         <div className = {s.item}>
-          <a>News</a>
+          <a href = "/dialogs">News</a>
         </div>
         <div className = {s.item}>
-          <a>Music</a>
+          <a href = "/profile">Music</a>
         </div>
         <div className = {s.item}>
           <a>Settings</a>
