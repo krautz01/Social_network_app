@@ -9,11 +9,9 @@ function App() {
   return (
     <div className='app-wrapper'>
       <Header />
-      <div className='app-content'>
-        <Navbar />
-        <Profile />
-        {/*<Dialogs />*/}
-      </div>
+      <Navbar />
+      <Profile />
+      {/*<Dialogs />*/}
     </div>
   );
 }
