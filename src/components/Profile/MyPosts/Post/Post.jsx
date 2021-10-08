@@ -5,7 +5,7 @@ const Post = (props) => {
 
     return (
         <div className={s.item}>
-            <img src='https://p4.wallpaperbetter.com/wallpaper/96/396/904/naruto-shippuden-sharingan-mangekyou-sharingan-anime-naruto-hd-art-wallpaper-preview.jpg' />
+            <img src='https://yt3.ggpht.com/a/AGF-l799eVkBJz_29r6sl92BcMIkBYgCTrs3Hmc5Zg=s900-c-k-c0xffffffff-no-rj-mo' />
             {props.massage}
             <div>
                 <span>like</span> {props.likesCount}

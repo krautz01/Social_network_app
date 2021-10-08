@@ -1,13 +1,12 @@
 import s from './Profile.module.css';
 import MyPosts from './MyPosts/MyPosts';
+import ProfileInfo from './ProfileInfo/ProfileInfo';
 
 const Profile = () => {
     return (
         <div>
-            <div>
-                ava + description
-            </div>
-            <MyPosts/>
+            <ProfileInfo />
+            <MyPosts />
         </div>
     )
 }
