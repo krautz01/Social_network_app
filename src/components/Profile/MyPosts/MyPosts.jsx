@@ -10,10 +10,10 @@ const Posts = () => {
         {id: 4, message: "Na ja", likesCount: 8 },
     ]
 
-    let postsElements = posts.map (p => <Post message={p.message} likesCount={p.likesCount} />) /* создает сообщения с сервера */
+    let postsElements = posts.map( p => <Post message={p.message} likesCount={p.likesCount} />) /* создает мои сообщения и явлется  */
 
     return (
-        <div className={s.postsBlock}>
+         <div className={s.postsBlock}>
             <h3>My posts</h3>
             <div>
                 <div>

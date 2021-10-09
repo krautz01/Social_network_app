@@ -1,20 +1,6 @@
-import { NavLink } from 'react-router-dom';
 import s from './Dialogs.module.css';
-
-const DialogItem = (props) => {
-    let path = "/dialogs/"+props.id;
-    return (
-        <div className={s.dialog +''+ s.active}>
-            <NavLink to={path}>{props.name}</NavLink>{/* создает ссылку к каждому чату */}
-        </div>
-    )
-};
-
-const Message = (props) => {
-    return (
-    <div className={s.message}>{props.message}</div>
-    )
-};
+import Message from './Message/Message';
+import DialogItem from './DialogItem/DialogItem';
 
 const Dialogs = (props) => {
 
@@ -33,8 +19,8 @@ const Dialogs = (props) => {
         {id: 4, message: 'Hi!'},
     ]
 
-    let messagesElements = messages.map ( m => <Message message={m.message}/> );
-    let dialogsElements = dialogs.map ( d => <DialogItem name={d.name} id={d.id}/> );
+    let dialogsElements = dialogs.map ( (d) => <DialogItem name={d.name} id={d.id}/> );
+    let messagesElements = messages.map ( (m) => <Message message={m.message}/> ); /* отрисовывает сообщения используя компоненту Message и доступ через prop-класс компоненты к массиву */ 
 
     return (
         <div className={s.dialogs}>
