@@ -3,16 +3,14 @@ import Post from './Post/Post';
 
 const Posts = () => {
 
-    let postData = [
-        {id: 1, message: 'Hi, how are you', likesCount: 12 }, 
-        {id: 2, message: "It's my first massage", likesCount: 11 },
-        {id: 3, message: 'Es ist so kalt!'},
-        {id: 4, message: 'Hi!'},
-        {id: 5, message: 'Hallo!'},
-        {id: 6, message: ''},
-        {id: 7, message: ''},
-        {id: 8, message: ''},
+    let posts = [
+        {id: 1, message: "Hi, wie geht's euch?", likesCount: 12 }, 
+        {id: 2, message: "Das ist meine erste Nachricht", likesCount: 11 },
+        {id: 3, message: 'Hallo!', likesCount: 5 }, 
+        {id: 4, message: "Na ja", likesCount: 8 },
     ]
+
+    let postsElements = posts.map (p => <Post message={p.message} likesCount={p.likesCount} />) /* создает сообщения с сервера */
 
     return (
         <div className={s.postsBlock}>
@@ -26,9 +24,7 @@ const Posts = () => {
                 </div>
             </div>
             <div className={s.posts}>
-               <Post message={postData[0].message} likesCount={postData[0].likesCount} />
-               <Post message={postData[1].message} likesCount={postData[1].likesCount}/>
-               
+               {postsElements}
             </div>
         </div>
     )
