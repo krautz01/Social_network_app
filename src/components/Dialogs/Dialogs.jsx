@@ -2,7 +2,7 @@ import s from './Dialogs.module.css';
 import Message from './Message/Message';
 import DialogItem from './DialogItem/DialogItem';
 
-const Dialogs = (props) => {
+const Dialogs = () => {
 
     let dialogs = [
         {id: 1, name: 'Angela'}, 
