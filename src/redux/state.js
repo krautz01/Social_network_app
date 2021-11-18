@@ -1,51 +1,79 @@
-import { rerenderEntireTree } from "../render";
+let store = {
+    _state: {
 
-let state = {
+        profilePage: {
+            posts: [
+                { id: 1, message: "Hi, wie geht's euch?", likesCount: 12 },
+                { id: 2, message: "Das ist meine erste Nachricht", likesCount: 11 },
+                { id: 3, message: 'Hallo!', likesCount: 5 },
+                { id: 4, message: "Na ja", likesCount: 8 },
+            ],
+            newPostText: 'De',
+        },
+        
+        dialogsPage: {
+            messages: [
+                { id: 1, message: 'Hi!' },
+                { id: 2, message: "Wie geht's?" },
+                { id: 3, message: 'Es ist so kalt!' },
+                { id: 4, message: 'Hi!' },
+            ],
+    
+            dialogs: [
+                { id: 1, name: 'Angela' },
+                { id: 2, name: 'Ervin' },
+                { id: 3, name: 'Klaus' },
+                { id: 4, name: 'Nico' },
+            ],
+        },
+    
+        sidebar: {}
+    },
+    _callSubscriber() {
+        console.log('state was changed')
+    },
 
-    profilePage: {
-        posts: [
-            { id: 1, message: "Hi, wie geht's euch?", likesCount: 12 },
-            { id: 2, message: "Das ist meine erste Nachricht", likesCount: 11 },
-            { id: 3, message: 'Hallo!', likesCount: 5 },
-            { id: 4, message: "Na ja", likesCount: 8 },
-        ],
-        newPostText: 'De',
+    getState() {
+        debugger;
+        return this._state; 
+    },
+    subscribe(observer) {
+        this._callSubscriber = observer;
     },
     
-    dialogsPage: {
-        messages: [
-            { id: 1, message: 'Hi!' },
-            { id: 2, message: "Wie geht's?" },
-            { id: 3, message: 'Es ist so kalt!' },
-            { id: 4, message: 'Hi!' },
-        ],
-
-        dialogs: [
-            { id: 1, name: 'Angela' },
-            { id: 2, name: 'Ervin' },
-            { id: 3, name: 'Klaus' },
-            { id: 4, name: 'Nico' },
-        ],
+    /* _addPost() {
+        let newPost = {
+            id: 5,
+            message: this._state.profilePage.newPostText,
+            likesCount: 0,
+        };
+    
+        this._state.profilePage.posts.push(newPost);
+        this._state.profilePage.newPostText = '';
+        this._callSubscriber(this._state);
     },
-
-    sidebar: {}
+    _updateNewPostText(newText) {
+        this._state.profilePage.newPostText = newText;
+        this._callSubscriber(this._state);
+    }, */
+    dispatch(action) {
+        if (action.type === 'ADD-POST') {
+            let newPost = {
+                id: 5,
+                message: this._state.profilePage.newPostText,
+                likesCount: 0,
+            };
+        
+            this._state.profilePage.posts.push(newPost);
+            this._state.profilePage.newPostText = '';
+            this._callSubscriber(this._state);
+        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+        this._state.profilePage.newPostText = action.newText;
+        this._callSubscriber(this._state);
+        }
+    }
+    
 }
 
-export let addPost = (postMessage) => {
-    let newPost = {
-        id: 5,
-        message: state.profilePage.newPostText,
-        likesCount: 0,
-    };
-
-    state.profilePage.posts.push(newPost);
-    state.profilePage.newPostText = '';
-    rerenderEntireTree(state);
-}
-
-export let updateNewPostText = (newText) => {
-    state.profilePage.newPostText = newText;
-    rerenderEntireTree(state);
-}
-
-export default state;
+export default store;
+window.store = store;
