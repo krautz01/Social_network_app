@@ -9,7 +9,7 @@ import {MemoryRouter} from 'react-router';
 let rerenderEntireTree = (state) => {
   ReactDOM.render(
     <React.StrictMode>
-      <App state={state} dispatch={store.dispatch.bind(store)} /* updateNewPostText={store.updateNewPostText.bind(store)} */ />
+      <App state={state} dispatch={store.dispatch.bind(store)} store={store}/>
     </React.StrictMode>,
     document.getElementById('root')
   );
