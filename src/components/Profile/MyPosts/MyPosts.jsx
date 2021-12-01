@@ -3,7 +3,7 @@ import Post from './Post/Post';
 import React from 'react';
 
 const MyPosts = (props) => {
-    let postsElements = props.posts.map( p => <Post message={p.message} likesCount={p.likesCount} />) /* создает мои сообщения */
+    let postsElements = props.posts.map( (p) => <Post message={p.message} likesCount={p.likesCount} />) /* создает мои сообщения */
 
     let newPostElement = React.createRef();
 
@@ -14,9 +14,7 @@ const MyPosts = (props) => {
     let onPostChange = () => {
         let text = newPostElement.current.value;
         props.updateNewPostText(text);
-    } 
-
-    /* C:\Games\Age of Civilizations 2 v1.0453 */
+    }
 
     return (
          <div className={s.postsBlock}>
