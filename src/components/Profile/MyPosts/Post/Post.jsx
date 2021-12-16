@@ -1,8 +1,9 @@
 import s from './Post.module.css';
+import usersPhoto from '../../../../assets/images/usersDefaultImage.png';
 
 const Post = (props) => {return (
         <div className={s.item}>
-            <img src='https://yt3.ggpht.com/a/AGF-l799eVkBJz_29r6sl92BcMIkBYgCTrs3Hmc5Zg=s900-c-k-c0xffffffff-no-rj-mo' />
+            <img src={usersPhoto} />
             {props.message}
             <div>
                 <span>like</span> {props.likesCount}
