@@ -1,5 +1,4 @@
 import s from './ProfileInfo.module.css';
-import myPhoto from '../../../assets/images/usersDefaultImage.png'
 import Preloader from '../../common/Preloader';
 
 const ProfileInfo = (props) => {
@@ -7,20 +6,44 @@ const ProfileInfo = (props) => {
     if (!props.profile) {
         return <Preloader />
     }
-    return(
+    return (
         <div>
-            <div>
-                <img src = { props.profile.photos.large} className = {s.userPhoto}/>
-            </div>
-            <div className = {s.descriptionBlock}>
-                <div>About me: { props.profile.aboutMe}</div>
+            <div className={s.descriptionBlock}>
+                <img src={props.profile.photos.large} className={s.userPhoto} />
+
+                <div>About me: {props.profile.aboutMe}</div>
+
                 <div>Contacts:
-                    <div>facebook: {props.profile.facebook}</div>
-                    <div>twitter: {props.profile.twitter}</div>
-                    <div>instagram: {props.profile.instagram}</div>
-                    <div>github: {props.profile.github}</div>
+                    <div>facebook: <a href={props.profile.contacts.facebook}>
+                        {props.profile.contacts.facebook}
+                    </a>
+                    </div>
+
+                    <div>twitter: <a href={props.profile.contacts.twitter}>
+                        {props.profile.contacts.twitter}
+                    </a>
+                    </div>
+
+                    <div>vk: <a href={props.profile.contacts.vk}>
+                        {props.profile.contacts.vk}
+                    </a>
+                    </div>
+
+                    <div>instagram: <a href={props.profile.contacts.instagram}>
+                        {props.profile.contacts.instagram}
+                    </a>
+                    </div>
+
+                    <div>github: <a href={props.profile.contacts.github}>
+                        {props.profile.contacts.github}
+                    </a>
+                    </div>
+
+
                 </div>
+
                 <div>Full name: {props.profile.fullName}</div>
+                
                 <div>Looking for a job: {String(props.profile.lookingForAJob)}</div>
             </div>
         </div>

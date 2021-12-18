@@ -3,6 +3,14 @@
     grid-area: h;
 }
 
-.header img  {
+.header img {
     width: 65px;
+}
+
+.loginBlock {
+    float: right;
+}
+
+.loginBlock a {
+    color: white;
 }
