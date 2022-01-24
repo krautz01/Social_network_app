@@ -11,10 +11,12 @@ const ProfileInfo = (props) => {
     return (
         <div>
             <div className={s.descriptionBlock}>
-                <img src={props.profile.photos.large} className={s.userPhoto} />
-                <ProfileStatus status={"Hello my Friends!"}/>
-                <div>About me: {props.profile.aboutMe}</div>
 
+                <img src={props.profile.photos.large} className={s.userPhoto} />
+                
+                <ProfileStatus status={props.status} updateStatus={props.updateStatus} />
+
+                <div>About me: {props.profile.aboutMe}</div>
                 <div>Contacts:
                     <div>facebook: <a href={props.profile.contacts.facebook}>
                         {props.profile.contacts.facebook}
@@ -45,7 +47,7 @@ const ProfileInfo = (props) => {
                 </div>
 
                 <div>Full name: {props.profile.fullName}</div>
-                
+
                 <div>Looking for a job: {String(props.profile.lookingForAJob)}</div>
             </div>
         </div>

@@ -6,10 +6,11 @@ import { render } from "@testing-library/react";
 class ProfileStatus extends React.Component {
     state = {
         editMode: false,
-        title: 'Yo!'
+        status: this.props.status,
     }
 
-    activateEditMod() {
+    activateEditMod = () => {
+        console.log("this:", this)
         this.setState({
             editMode: true,
         })
@@ -18,25 +19,33 @@ class ProfileStatus extends React.Component {
     deactivateEditMod() {
         this.setState({
             editMode: false,
-        })
+        });
+        this.props.updateStatus(this.state.status);
     }
 
-    render() {
-        return (
-            <div>
-                {!this.state.editMode &&
-                    <div>
-                        <span onDoubleClick={this.activateEditMod.bind(this)}>{this.props.status}</span>
-                    </div>
-                }
-                {this.state.editMode &&
-                    <div>
-                        <input autoFocus={true} onBlur={this.deactivateEditMod.bind(this)} value={this.props.status} />
-                    </div>
-                }
-            </div>
-        )
+    onStatusChange = (e) => {
+        this.setState({
+            status: e.currentTarget.value,
+        })
+    };
+
+        render() {
+            return (
+                <div>
+                    {!this.state.editMode &&
+                        <div>
+                            <span onDoubleClick={this.activateEditMod}>{this.props.status}</span>
+                        </div>
+                    }
+                    {this.state.editMode &&
+                        <div>
+                            <input onChange={this.onStatusChange} autoFocus={true} onBlur={this.deactivateEditMod.bind(this)}
+                                value={this.state.status} />
+                        </div>
+                    }
+                </div>
+            )
+        }
     }
-}
 
 export default ProfileStatus;
