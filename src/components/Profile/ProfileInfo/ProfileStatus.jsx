@@ -4,9 +4,10 @@ import Preloader from '../../common/Preloader';
 import { render } from "@testing-library/react";
 
 class ProfileStatus extends React.Component {
+    
     state = {
         editMode: false,
-        status: this.props.status,
+        status: this.props.status, 
     }
 
     activateEditMod = () => {
@@ -34,7 +35,7 @@ class ProfileStatus extends React.Component {
                 <div>
                     {!this.state.editMode &&
                         <div>
-                            <span onDoubleClick={this.activateEditMod}>{this.props.status}</span>
+                            <span onDoubleClick={this.activateEditMod}>{this.props.status || "-----"}</span>
                         </div>
                     }
                     {this.state.editMode &&
