@@ -1,28 +1,10 @@
 import s from './MyPosts.module.css';
 import Post from './Post/Post';
 import React from 'react';
-import { Field, reduxForm } from 'redux-form';
-import { requiredField } from '../../../utilities/validators/validators';
-
-let AddNewMyPostForm = (props) => {
-    return (
-        <form onSubmit={props.handleSubmit}>
-            <div>
-                <Field name='newPostText' component='textarea' validate={
-                    [requiredField, maxLength15, minLength2]
-                }/>
-            </div>
-            <div>
-                <button >Add post</button>
-            </div>
-        </form>
-    )
-};
-
-let AddNewMyPostFormRedux = reduxForm({form: 'ProfileAddNewMyPostForm'})(AddNewMyPostForm);
+import AddNewMyPostForm from './AddNewMyPostForm/AddNewMyPostForm';
 
 const MyPosts = (props) => {
-    let postsElements = props.posts.map((p) => <Post message={p.message} likesCount={p.likesCount} />) /* создает мои сообщения */
+    let postsElements = props.posts.map((p) => <Post message={p.message} likesCount={p.likesCount} />) /* creat my posts */
     let newPostElement = React.createRef();
 
     let onAddPost = (values) => {
@@ -32,7 +14,7 @@ const MyPosts = (props) => {
     return (
         <div className={s.postsBlock}>
             <h3>My posts</h3>
-            <AddNewMyPostFormRedux onSubmit={onAddPost} />
+            <AddNewMyPostForm onSubmit={onAddPost} />
             <div className={s.posts}>
                 {postsElements}
             </div>
