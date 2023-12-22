@@ -6,12 +6,14 @@ import Navbar from "./components/Navbar";
 import styled from "styled-components";
 
 const AppWrapper = styled.div`
+  width: 1440px;
+  height: 1024px;
   display: grid;
   grid-template-areas:
-  "h h h"
-  "n c c";
-  grid-tempalte-rows: 60px 1fr;
-  grid-tempalte-columns: 2fr 10fr;
+    "h h "
+    "n c ";
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 2fr 10fr;
   grid-gap: 10px;
 `;
 

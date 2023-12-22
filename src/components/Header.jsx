@@ -1,5 +1,5 @@
 import React from "react";
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const StyledImg = styled.img`
   width: 65px;
@@ -7,8 +7,10 @@ const StyledImg = styled.img`
 `;
 
 const StyledHeader = styled.header`
-gridarea: h;
-
+  grid-area: h;
+  background-color: #202eae;
+  display: flex;
+  align-items: center;
 `;
 
 export default function Header() {
