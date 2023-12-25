@@ -1,0 +1,11 @@
+.profile {
+  grid-area: c;
+  background-color: #bbbbbb;
+  border-radius: 10px;
+  padding: 10px;
+  color: black;
+}
+
+.ava_desc {
+  border: 2px solid #e54abc;
+}
