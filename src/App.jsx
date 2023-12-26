@@ -1,9 +1,13 @@
 import React from "react";
+import styled from "styled-components";
+
 import "./App.css";
+import {Route, Routes} from "react-router-dom";
+
 import Header from "./components/Header/Header";
 import Profile from "./components/Profile/Profile";
 import Navbar from "./components/Navbar/Navbar";
-import styled from "styled-components";
+import Dialogs from "./components/Dialogs/Dialogs";
 
 const AppWrapper = styled.div`
   width: 1440px;
@@ -19,11 +23,17 @@ const AppWrapper = styled.div`
 
 function App() {
   return (
-    <AppWrapper>
-      <Header />
-      <Navbar />
-      <Profile />
-    </AppWrapper>
+    <>
+      <Routes>
+        <Route path="/" Component={Profile}/>
+        <Route path="/dialogs" Component={Dialogs}/>
+      </Routes>
+      <AppWrapper>
+        <Header />
+        <Navbar />
+        <Profile />
+      </AppWrapper>
+    </>
   );
 }
 
