@@ -8,9 +8,9 @@ const StyledImg = styled.img`
   height: 50px;
 `;
 
-export default function Profile() {
+export default function ProfilePage() {
   return (
-    <div className={s.profile}>
+    <div >
       <div className={s.ava_desc}>
         <StyledImg src="https://cdn0.iconfinder.com/data/icons/team-work-and-organization-2/128/78-1024.png" />
         Description
